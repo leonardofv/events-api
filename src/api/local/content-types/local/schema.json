@@ -1,0 +1,36 @@
+{
+  "kind": "collectionType",
+  "collectionName": "locals",
+  "info": {
+    "singularName": "local",
+    "pluralName": "locals",
+    "displayName": "Local"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "nome": {
+      "type": "string",
+      "maxLength": 100,
+      "required": true
+    },
+    "endereco": {
+      "type": "component",
+      "component": "local.endereco",
+      "repeatable": false,
+      "required": true
+    },
+    "capacidade": {
+      "type": "integer",
+      "min": 1
+    },
+    "eventos": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::evento.evento",
+      "mappedBy": "local"
+    }
+  }
+}

@@ -1,0 +1,39 @@
+{
+  "collectionName": "components_local_enderecos",
+  "info": {
+    "displayName": "endereco"
+  },
+  "options": {},
+  "attributes": {
+    "rua": {
+      "type": "string",
+      "maxLength": 150,
+      "required": true
+    },
+    "numero": {
+      "type": "string",
+      "maxLength": 10,
+      "required": true
+    },
+    "complemento": {
+      "type": "string",
+      "maxLength": 100
+    },
+    "cidade": {
+      "type": "string",
+      "maxLength": 100,
+      "required": true
+    },
+    "estado": {
+      "type": "string",
+      "required": true,
+      "regex": "^[A-Z]{2}$"
+    },
+    "cep": {
+      "type": "string",
+      "required": true,
+      "regex": "^\\d{5}-\\d{3}$"
+    }
+  },
+  "config": {}
+}

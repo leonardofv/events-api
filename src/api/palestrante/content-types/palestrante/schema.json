@@ -1,0 +1,43 @@
+{
+  "kind": "collectionType",
+  "collectionName": "palestrantes",
+  "info": {
+    "singularName": "palestrante",
+    "pluralName": "palestrantes",
+    "displayName": "Palestrante"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "nome": {
+      "type": "string",
+      "maxLength": 100,
+      "required": true
+    },
+    "email": {
+      "type": "email",
+      "private": true,
+      "searchable": false,
+      "required": true,
+      "unique": true
+    },
+    "bio": {
+      "type": "blocks"
+    },
+    "foto": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "eventos": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::evento.evento",
+      "mappedBy": "palestrantes"
+    }
+  }
+}

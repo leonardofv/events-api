@@ -1,0 +1,36 @@
+{
+  "kind": "collectionType",
+  "collectionName": "inscricoes",
+  "info": {
+    "singularName": "inscricao",
+    "pluralName": "inscricoes",
+    "displayName": "Inscricao"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "evento": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::evento.evento",
+      "inversedBy": "inscricoes"
+    },
+    "usuario": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "plugin::users-permissions.user",
+      "inversedBy": "inscricoes"
+    },
+    "situacao": {
+      "type": "enumeration",
+      "required": true,
+      "default": "confirmada",
+      "enum": [
+        "confirmada",
+        "cancelada"
+      ]
+    }
+  }
+}
